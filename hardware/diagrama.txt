@@ -1,0 +1,54 @@
+┌─────────────────────────────────────────────────────┐
+│                HIDROFIX – DIAGRAMA SISTEMA           │
+├─────────────────────────────────────────────────────┤
+│                                                     │
+│   FUENTE 220VAC                                     │
+│         │                                            │
+│         ▼                                            │
+│   [FUENTE 12VDC] ────┬───────╮                       │
+│         │            │       │                       │
+│         ▼            ▼       ▼                       │
+│   [SUPERCAP 5F]   [ARDUINO]  [SENSOR FLUJO 2017Y]    │
+│         │            │               │               │
+│         └────────────┼───────────────┘               │
+│                      │                               │
+│                      ▼                               │
+│               [RELE 12V]                             │
+│                      │                               │
+│         ┌────────────┼─────────────┐                 │
+│         │            │             │                 │
+│         ▼            ▼             ▼                 │
+│   [CELDA ELECTROLISIS]     [LED ALERTA]              │
+│         │                    [BUZZER]                │
+│         ▼                                            │
+│   [BLOQUE DISIPADOR]                                 │
+│         │                                            │
+│         ▼                                            │
+│   [TUBO PEX 6mm] ──────► H₂ + O₂ (salida)           │
+│                                                     │
+├─────────────────────────────────────────────────────┤
+│ LEYENDA:                                            │
+│   [ ] = Componente                                  │
+│   ─── = Cable/conexión principal                    │
+│   ──► = Flujo de gas                                │
+│   ▼ = Conexión hacia abajo                          │
+└─────────────────────────────────────────────────────┘
+
+───────────────────────────────────────────────────────
+DESCRIPCIÓN DE CONEXIONES:
+
+1. Fuente 220VAC → Fuente 12VDC
+2. Fuente 12VDC alimenta:
+   • Supercapacitor 5F (backup)
+   • Arduino Nano
+   • Sensor de flujo
+3. Arduino controla:
+   • Rele (corta alimentación a celda en emergencia)
+   • LED rojo y buzzer (alertas)
+4. Celda de electrólisis:
+   • 3 placas acero (+ en centro, - en laterales)
+   • Electrolito: KOH + agua destilada
+   • Bloque disipador anti-chispa en salida de gas
+   • Tubo PEX 6mm conduce H₂ a almacenamiento/uso
+5. Sensor de flujo monitorea producción de H₂.
+   Si no hay flujo → Arduino activa alerta y abre relé.
