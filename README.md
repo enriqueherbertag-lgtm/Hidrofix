@@ -1,5 +1,7 @@
 # HidroFix – Kit de seguridad open source para celdas de electrólisis caseras
 
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 **Sistema de seguridad de bajo costo para prevenir explosiones, sobrecalentamiento y apagado inseguro en celdas de hidrógeno caseras.**
 
 HidroFix es un sistema de seguridad modular diseñado para proteger a los usuarios de hidrógeno durante experimentos de electrólisis casera. Combina sensores de flujo, control térmico y respaldo energético para operación segura.
