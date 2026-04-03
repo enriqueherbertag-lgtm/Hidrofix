@@ -1,66 +1,50 @@
-# HidroFix – Kit de seguridad open source para celdas de electrólisis caseras
+# Hidrofix: Generador de hidrógeno para cocina con seguridad integrada
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19393726.svg)](https://doi.org/10.5281/zenodo.19393726)
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
+[![EN](https://img.shields.io/badge/English-version-blue.svg)](./README.en.md)
 
-**Sistema de seguridad de bajo costo para prevenir explosiones, sobrecalentamiento y apagado inseguro en celdas de hidrógeno caseras.**
+**Generador de hidrógeno para uso doméstico (cocina). Con sistema de seguridad integrado que previene explosiones, sobrecalentamiento y apagado inseguro.**
 
-HidroFix es un sistema de seguridad modular diseñado para proteger a los usuarios de hidrógeno durante experimentos de electrólisis casera. Combina sensores de flujo, control térmico y respaldo energético para operación segura.
+## ¿Qué problema resuelve?
 
----
+El hidrógeno es un gas altamente inflamable. Un generador doméstico sin protecciones puede ser peligroso: fugas, acumulación de gas, sobrecalentamiento, cortes de energía inesperados.
 
-## Problema que Resuelve
+**Hidrofix resuelve eso. No es solo un generador. Es un generador que no explota.**
 
-- **Riesgo de explosión:** Acumulación de hidrógeno sin ventilación adecuada puede generar atmósferas explosivas.
-- **Sobrecalentamiento:** Celdas de electrólisis pueden alcanzar temperaturas peligrosas (>50°C).
-- **Apagado inseguro:** Cortes de energía pueden dejar la celda en estado inseguro.
+## ¿Qué hace?
 
-**HidroFix monitoriza, alerta y actúa automáticamente para prevenir accidentes.**
-
----
-
-## Especificaciones Técnicas
-
-| Parámetro | Valor |
-|-----------|-------|
-| **Sensor de flujo** | Modelo 2017 Y (0–10 L/min) |
-| **Respaldo energético** | Supercondensador 5F (5.5V) |
-| **Alerta térmica** | LED + buzzer activo >50°C |
-| **Fuente de alimentación** | 12V estabilizada con protección contra cortocircuitos |
-| **Bloque disipador** | Anti-chispa (aluminio anodizado) |
-| **Microcontrolador** | Arduino Nano (o compatible) |
-
----
+- **Genera hidrógeno** a partir de agua para cocinar de forma limpia.
+- **Sensor de flujo** detecta si hay producción normal o fuga.
+- **Alerta térmica** (>50°C) activa corte automático.
+- **Supercondensador 5F** da respaldo energético para apagado seguro si falla la corriente.
+- **Bloque disipador anti-chispa** evita ignición accidental.
 
 ## Modos de operación
 
 | Modo | Condición | Acción |
 |------|-----------|--------|
-| **Normal** | Flujo normal, T < 45°C | Monitoreo continuo, indicador LED verde |
-| **Advertencia** | T > 45°C o flujo bajo | LED ámbar, buzzer intermitente |
-| **Alerta** | T > 50°C o flujo nulo | Corte de energía, LED rojo, buzzer continuo |
-| **Respaldo** | Pérdida de alimentación | Supercondensador mantiene sistemas críticos por 5–10 segundos, apagado seguro |
+| Normal | Flujo normal, T < 45°C | LED verde, monitoreo continuo |
+| Advertencia | T > 45°C o flujo bajo | LED ámbar, buzzer intermitente |
+| Alerta | T > 50°C o flujo nulo | Corte de energía, LED rojo, buzzer continuo |
+| Respaldo | Pérdida de alimentación | Supercondensador activa apagado seguro (5-10 segundos) |
 
----
+## ¿Para quién es?
 
-## Componentes
+- Cocinas domésticas que usan hidrógeno como combustible.
+- Hogares autosuficientes (off-grid).
+- Proyectos de energía limpia en casa.
 
-| Componente | Especificación | Función |
-|------------|----------------|---------|
-| **Sensor de flujo** | 2017 Y (0–10 L/min) | Detecta producción de hidrógeno |
-| **Sensor térmico** | NTC 10kΩ o LM35 | Monitorea temperatura de la celda |
-| **Supercondensador** | 5F, 5.5V | Respaldo energético |
-| **Microcontrolador** | Arduino Nano | Lógica de control y alertas |
-| **Relé** | 12V, 10A | Corte de energía a la celda |
-| **Disipador** | Aluminio anodizado | Evita chispas por conexiones sueltas |
+## Estado actual
 
----
+- Prototipo en evolución.
+- Utiliza equipamiento existente certificado.
+- Documentación completa en el repositorio.
 
-## Instalación
+## Licencia
 
-```bash
-# Clonar repositorio
-git clone https://github.com/enriqueherbertag-lgtm/HidroFix
-cd HidroFix
+Copyright © 2026 Enrique Aguayo. Todos los derechos reservados.
 
-# Subir firmware a Arduino (usando Arduino IDE o platformio)
-# Ver firmware/hidrofix.ino
+## Autor
+
+Enrique Aguayo H. – Mackiber Labs
